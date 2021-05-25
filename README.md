@@ -34,9 +34,9 @@ Ici, même principe que pour le Simple-MVC : ce dossier va principalement conten
 
 ### /src
 
-On retrouve un dossier `/src`, contenant la logique de ton application. Dedans, on trouve un dossier `/Controller` dans lequel tu rangeras tes **contrôleurs** (en toute logique). Petite nuance : ces **contrôleurs** devront toujours renvoyer un objet de la classe Symfony `Response`, qui représente une réponse HTTP complète, ce qui peut contenir entre autres un document HTML.
+On retrouve un dossier `/src`, contenant la logique de ton application. Dedans, on trouve un dossier `/Controller` dans lequel tu rangeras tes **contrôleurs** (en toute logique). Petite nuance : les méthodes de ces **contrôleurs** devront toujours renvoyer un objet de la classe Symfony `Response`, qui représente une réponse HTTP complète, ce qui peut contenir entre autres un document HTML.
 
-Comme pour le Simple-MVC, chaque *méthode* d'une classe de **contrôleur** est liée à une *route*. Seulement ici, plus besoin de se casser la tête avec des histoires de nom de la classe suivie du nom de la méthode auquel on aditionne le nombre moyen de dents d'une girafe! En effet, tu es ici complètement maître·sse de la tête qu'auront tes routes, en utilisant l'annotation `@Route`. Nous n'allons pas nous attarder maintenant sur cette notion, c'est plus parlant avec des exemples 😉.
+Comme pour le Simple-MVC, chaque *méthode* d'une classe de **contrôleur** est liée à une *route*. Seulement ici, plus besoin de se casser la tête avec des histoires de nom de la classe suivie du nom de la méthode auquel on aditionne le nombre moyen de dents d'une girafe ! En effet, tu es ici complètement maître·sse de la tête qu'auront tes routes, en utilisant l'annotation `@Route`. Nous n'allons pas nous attarder maintenant sur cette notion, c'est plus parlant avec des exemples 😉.
 
 On trouve aussi un dossier `/Entity` et un dossier `/Repository`, qui, à eux deux, représentent ton **modèle**, mais nous reviendrons sur ces notions lors d'un autre groupe de support.
 
@@ -56,7 +56,7 @@ En effet, **Webpack-Encore** te permet de créer automatiquement des *builds* ut
 
 Exemple : pour des raisons d'efficacité et de lisibilité de ton code, tu décides de coder tout ton style en *scss*. Seulement, les navigateurs ne pouvant lire le *scss*, il faut faire passer ce dernier par une étape de *compilation* en *css* pour obtenir une feuille de style utilisable par ton navigateur. C'est ici qu'intervient **Encore**, en te proposant par exemple de compiler ton *scss* en *css*, soit à chaque fois que tu lui demandes en lançant `yarn encore dev` (comme tu l'as fait durant l'étape d'installation), ou même automatiquement à chaque fois que tu modifies un fichier situé dans `/assets` en lançant `yarn encore dev --watch`.
 
-Mais ce n'est pas tout : **Encore** peut aussi faire d'autres choses, comme *minifier tes assets* pour l'environemment de production, etc...
+Mais ce n'est pas tout : **Encore** peut aussi faire d'autres choses, comme *minifier tes assets* pour l'environemment de production, *etc*...
 
 ## À TOI DE JOUER !
 
@@ -98,7 +98,7 @@ Essaie donc ensuite d'injecter une variable `id` (un nombre en dur) dans ta vue 
 
 Maintenant, passons aux choses sérieuses.
 
-Placekitten est une photothèque permettant de récupérer des photos de chats et chatons trop meugnons 🐱. Elle contient 16 photos. Remplace donc ton `<p>` par `<img src="https://placekitten.com/400/500?image={{ id }} alt="a cute cat">`. Si l'`id` que tu envoies à ta vue est bien un nombre entier entre 1 et 16, tu devrais désormais voir une magnifique photo de chat! Essaie de changer l'`id` que tu envoies depuis ton contrôleur, la photo devrait changer 🙂.
+Placekitten est une photothèque permettant de récupérer des photos de chats et chatons trop meugnons 🐱. Elle contient 16 photos. Remplace donc ton `<p>` par `<img src="https://placekitten.com/400/500?image={{ id }}" alt="a cute cat">`. Si l'`id` que tu envoies à ta vue est bien un nombre entier entre 1 et 16, tu devrais désormais voir une magnifique photo de chat! Essaie de changer l'`id` que tu envoies depuis ton contrôleur, la photo devrait changer 🙂.
 
 ### "ET J'ÉTAIS SUR LA ROUTE TOUTE LA SAINTE JOURNÉE" - TOI
 
