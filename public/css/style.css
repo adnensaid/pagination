@@ -1,0 +1,9 @@
+:root {
+    --wild-color: #ff6c71;
+    --light: #fffbfb;
+}
+
+body {
+    background-color: var(--wild-color);
+    color: var(--light);
+}
