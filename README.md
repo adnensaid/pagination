@@ -136,3 +136,4 @@ Tes boutons "précédent" et "suivant" sont bien beaux, mais tu aimerais pouvoir
 ## CONCLUSION
 
 Voilà qui clos ce premier support sur les bases de Symfony, on se retrouve peut être pour le suivant, dans lequel on va parler bases de données avec Doctrine!
+# pagination
