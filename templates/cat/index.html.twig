@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1> Cat example </h1>
+    <div>
+        <div class="d-flex justify-content-center mb-5">
+            <img src="https://placekitten.com/400/500?image={{ id }}" alt="a cute cat">    
+        </div>
+        <nav aria-label="Page navigation example ">
+            <ul class="pagination justify-content-center">
+                {% set var = id %}
+                {% set saut = 0 %}
+                {{ var == 1 ? '<li class="page-item disabled"><a class="page-link">Previous</a></li>'
+                 : "<li class='page-item'><a class='page-link'>Previous</a></li>"  }}
+                {% for i in range(1,16) %}
+                    {% set saut = saut + i %}
+                    <li class='page-item'><a class='page-link' href="{{ path('cat', {id:saut}) }}">{{ saut }}</a></li>
+                    {% if saut is divisible by(4) %}
+                        {% set saut = 0 %}
+                    {% endif %}
+                {% set var = i %}
+                {% endfor %}
+                {% set var = id %}
+                {{ var == 16 ? '<li class="page-item disabled"><a class="page-link">Next</a></li>'
+                 : "<li class='page-item'><a class='page-link' href='#'>Next</a></li>"  }}
+            </ul>
+        </nav>
+    </div>
+</div>
+
+{# <div>
+
+    <a href="{{ path('cat', {id:id-1}) }}">photo précédent</a>
+    <a href="{{ path('cat', {id:id+1}) }}">photo suivante</a>
+</div> #}
+{% endblock %}
